@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Taylor Chen – Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#F7F4F8;--surface:#FFFFFF;--text:#2A1F33;--muted:#6E6478;--line:#E2DAE6;--accent:#6B2D5C;--accent-ink:#FFFFFF;--blush:#EBCFD6;--plum:#4A2A5E;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1D1724;--surface:#2A2132;--text:#F1EAF4;--muted:#B3A8BD;--line:#3E3248;--accent:#E0AFD3;--accent-ink:#1D1724;--blush:#6B3A52;--plum:#C9A9E0;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1D1724;--surface:#2A2132;--text:#F1EAF4;--muted:#B3A8BD;--line:#3E3248;--accent:#E0AFD3;--blush:#6B3A52;--plum:#C9A9E0;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1.0625rem;line-height:1.65}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-weight:600;line-height:1.05;margin:0;letter-spacing:-.01em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.5rem}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;font-weight:500}
+nav a{text-decoration:none;margin-left:1.5rem;color:var(--muted)}
+nav a:hover{color:var(--text)}
+nav .name{font-family:"Cormorant Garamond",Georgia,serif;font-weight:700;font-size:1.6rem;margin:0;color:var(--text)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;padding:3.5rem 0 5rem}
+.hero h1{font-size:clamp(2.9rem,6.8vw,5.3rem);font-weight:500}
+.hero p.lead{font-size:1.2rem;color:var(--muted);max-width:34rem;margin:1.5rem 0 2rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.8rem 1.4rem;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--accent)}
+.btn.primary{background:var(--accent);color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.primary{color:#12132A}}
+.btn.ghost{color:var(--accent)}
+/* annotated product card */
+.audit{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:1.25rem;box-shadow:0 20px 40px -24px rgba(40,50,120,.35)}
+.audit .shot{height:150px;border-radius:12px;background:linear-gradient(135deg,var(--blush),var(--plum));opacity:.9}
+.audit .row{height:10px;border-radius:6px;background:var(--line);margin:.8rem 0 0;width:70%}
+.audit .row.s{width:45%}
+.audit .cta{margin-top:1rem;height:38px;width:55%;border-radius:8px;background:var(--line)}
+.pin{position:absolute;background:var(--accent);color:#fff;font-size:.82rem;font-weight:600;padding:.4rem .75rem;border-radius:999px;white-space:nowrap;box-shadow:0 6px 16px -6px rgba(0,0,0,.4)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pin{color:#12132A}}
+.pin.a{top:-14px;right:14px}.pin.b{top:44%;left:-14px}.pin.c{bottom:18px;right:-10px}
+.score{position:absolute;bottom:-22px;left:22px;background:var(--text);color:var(--bg);padding:.55rem 1rem;border-radius:12px;font-family:"Cormorant Garamond",Georgia,serif;font-weight:700;font-size:1.25rem}
+.score span{font-weight:500;font-family:"Jost",sans-serif;opacity:.75;font-size:.85rem;margin-left:.4rem}
+section{padding:4rem 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:clamp(2.4rem,4.8vw,3.4rem);margin-bottom:2.5rem}
+.proj{display:grid;grid-template-columns:.8fr 1.2fr;gap:2.5rem;padding:2.25rem 0;border-top:1px solid var(--line)}
+.proj:first-of-type{border-top:0;padding-top:0}
+.proj h3{font-size:2.2rem;margin-bottom:.6rem}
+.proj .tag{color:var(--muted);margin:0 0 1.25rem}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.25rem;padding:0;list-style:none}
+.tags li{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:.2rem .8rem;font-size:.9rem}
+.links a{font-weight:600;color:var(--accent);margin-right:1.25rem}
+dl{margin:0}dt{font-weight:600;margin-top:1rem}dd{margin:.15rem 0 0;color:var(--muted);max-width:60ch}
+dt:first-child{margin-top:0}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.about p{margin:0 0 1rem;max-width:60ch}
+.skills{display:grid;gap:1rem}
+.skills h3{font-size:1.45rem;margin-bottom:.4rem}
+.skills p{margin:0;color:var(--muted)}
+.exp{display:grid;grid-template-columns:.8fr 1.2fr;gap:2.5rem;padding:1.75rem 0;border-top:1px solid var(--line)}.exp:first-of-type{border-top:0;padding-top:0}.exp h3{font-size:1.6rem}.exp p{margin:0;max-width:60ch}.exp .where{color:var(--muted);margin:.35rem 0 0}
+footer{padding:4rem 0 3rem;border-top:1px solid var(--line)}
+footer h2{font-size:clamp(2.5rem,5.6vw,3.9rem);margin-bottom:1rem}
+footer p{color:var(--muted);margin:0 0 1.5rem}
+@media (max-width:760px){.hero,.proj,.about,.exp{grid-template-columns:1fr}.hero{padding-top:2rem}.pin.b{left:-6px}.pin.c{right:-4px}nav a{margin-left:1rem}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Main">
+    <p class="name">Taylor Chen</p>
+    <div><a href="#work">Work</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <h1>I build fashion tech that’s easier to use.</h1>
+      <p class="lead">Cognitive Science and Fashion Merchandising student at the University of Georgia. I design and code AI tools and websites that make online shopping simpler.</p>
+      <div class="btns">
+        <a class="btn primary" href="#work">See my projects</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="audit" aria-label="Illustration of a retail product page with design feedback">
+      <span class="pin a">Add to cart is hard to find</span>
+      <div class="shot"></div>
+      <div class="row"></div><div class="row s"></div>
+      <div class="cta"></div>
+      <span class="pin b">Low contrast on price</span>
+      <span class="pin c">Size guide hidden</span>
+      <div class="score">6.5/10<span>checkout clarity</span></div>
+    </div>
+  </header>
+</div>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Selected work</h2>
+
+    <article class="proj">
+      <div>
+        <h3>Fashion UX AI Website</h3>
+        <p class="tag">Summer 2026 research internship. An AI tool that reviews fashion websites and apps and tells you how to make them easier to shop.</p>
+        <ul class="tags"><li>Python</li><li>FastAPI</li><li>Google Gemini API</li><li>HTML, CSS, JavaScript</li><li>Render</li></ul>
+        <p class="links"><a href="https://fashion-ux-ai.onrender.com">Live site</a><a href="https://github.com/tayloraddi/fashion-ux-ai">Code</a></p>
+      </div>
+      <dl>
+        <dt>The problem</dt>
+        <dd>Fashion sites lose shoppers over small things: buried buttons, confusing navigation, unclear sizing. I wanted a faster way to spot those problems from a real shopper’s point of view.</dd>
+        <dt>What I built</dt>
+        <dd>A full-stack web app: you upload a screenshot of a fashion site, choose a user persona, and get a UX score plus feedback on first impression, visual design, usability, trust, shopping experience, pain points, and recommended fixes.</dd>
+        <dt>What I did</dt>
+        <dd>Built a Python (FastAPI) backend that sends the screenshot and persona details to Google’s Gemini API, built the interface in HTML, CSS, and JavaScript, and deployed it on Render, using Cursor to build. Users can pick a preset persona (college student, young professional, fashion enthusiast) or enter their own age, location, and occupation, and the AI writes its feedback from that person’s point of view. [Add how many sites you tested.]</dd>
+        <dt>What I learned</dt>
+        <dd>AI responses don’t always come back in a tidy format, so I wrote code to pull out the score, split the feedback into sections, and fix garbled characters. I also told the AI to describe only what’s visible in the screenshot so it wouldn’t invent features.</dd>
+      </dl>
+    </article>
+
+    <article class="proj">
+      <div>
+        <h3>Movie and TV Review Blog</h3>
+        <p class="tag">A review blog with a small merchandise shop attached.</p>
+        <ul class="tags"><li>Web development</li><li>Content</li><li>E-commerce</li><li>[Add your stack]</li></ul>
+        <p class="links"><a href="#">Live site</a><a href="#">Code</a></p>
+      </div>
+      <dl>
+        <dt>The problem</dt>
+        <dd>I wanted one place to write about what I watch and see whether readers would buy related merchandise.</dd>
+        <dt>What I built</dt>
+        <dd>A blog for reviews with a shop section, designed so readers can move from a review to a product without friction.</dd>
+        <dt>What I did</dt>
+        <dd>Handled design, development, and writing. [Add details: number of reviews, how products are listed, any traffic or sales.]</dd>
+        <dt>What I learned</dt>
+        <dd>[Add one real lesson, such as balancing content and selling, or structuring a shop.]</dd>
+      </dl>
+    </article>
+
+    <article class="proj">
+      <div>
+        <h3>Text Parsing and Sentiment Tool</h3>
+        <p class="tag">A Java program from my intro programming course that pulls hashtags, mentions, and sentiment cues out of social media text.</p>
+        <ul class="tags"><li>Java</li><li>Eclipse</li><li>Text processing</li><li>File I/O</li></ul>
+        <p class="links"><a href="#">Code</a></p>
+      </div>
+      <dl>
+        <dt>The problem</dt>
+        <dd>Social media text is messy. Finding hashtags, mentions, and the overall tone by hand doesn’t scale.</dd>
+        <dt>What I built</dt>
+        <dd>A Java program that reads social media-style data, extracts hashtags, mentions, and sentiment cues, and organizes them.</dd>
+        <dt>What I did</dt>
+        <dd>Used string manipulation, arrays, and file input/output to find patterns in user-written text, and explored how language signals hint at engagement, tone, and what a user wants. [Add how much data you tested it on.]</dd>
+        <dt>What I learned</dt>
+        <dd>Debugging, documenting my code, and testing in small steps made the program more accurate and easier to read.</dd>
+      </dl>
+    </article>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <div class="exp"><div><h3>Student Ambassador and Product Feedback Tester</h3><p class="where">The Mall, fashion technology startup. Dec 2025 to present</p></div><p>Test new features and report on navigation, engagement, and usability, and work with the founding team to refine the product for a Gen Z audience.</p></div>
+    <div class="exp"><div><h3>Blog Writer and Fashion Stylist</h3><p class="where">Rouge Magazine, Athens, GA. Aug 2025 to present</p></div><p>Write editorial content on fashion, lifestyle, and trends, and style looks for magazine features.</p></div>
+    <div class="exp"><div><h3>Apparel Coordinator</h3><p class="where">Delta Phi Epsilon, Psi Chapter. Sept 2026 to present</p></div><p>Manage chapter apparel from design to delivery, including vendor communication, pricing, sizing, payments, and order timelines.</p></div>
+    <div class="exp"><div><h3>Volunteer Mentor</h3><p class="where">Girls Who Code. Aug 2026 to present</p></div><p>Teach foundational coding to girls at local schools and introduce them to careers in technology.</p></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <h2 style="margin-bottom:1.5rem">About</h2>
+      <p>I study Cognitive Science with a minor in Fashion Merchandising at the University of Georgia. I’m interested in where how people think, how fashion works, and technology meet, so I build tools that make shopping online easier to use.</p>
+      <p>I’m looking for an internship in fashion tech, UX/UI, or front-end development. Outside class, I give product feedback to a fashion-tech startup, write and style for Rouge Magazine, and volunteer with Girls Who Code.</p>
+    </div>
+    <div class="skills">
+      <div><h3>Design</h3><p>UX principles, user personas, Canva, Blender, fashion styling</p></div>
+      <div><h3>Code</h3><p>Python, FastAPI, Java, HTML, CSS, JavaScript, Google Gemini API, with Cursor and Visual Studio Code</p></div>
+      <div><h3>Research and writing</h3><p>Cognitive science, consumer behavior, text analysis, editorial writing</p></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let’s work together.</h2>
+    <p>I’m open to internships in fashion tech, UX/UI, and front-end development.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:tayloraddisonchen@gmail.com">Email me</a>
+      <a class="btn ghost" href="https://github.com/tayloraddi">GitHub</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/taylorchen">LinkedIn</a>
+      <a class="btn ghost" href="#">Resume (PDF)</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
